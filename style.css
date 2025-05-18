@@ -1,0 +1,159 @@
+:root {
+  color-scheme: dark;
+  --black: #222;
+  --white: snow;
+  --gray: #bbb;
+  --orange: #fb4c19;
+  --background: rgba(0, 0, 0, 0.3);
+}
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+
+  margin: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background: var(--black);
+  color: var(--white);
+
+  font-family: "Arial", sans-serif;
+}
+
+body {
+  max-width: 992px;
+  flex: auto;
+  padding: 0 10px;
+
+  & > * {
+    width: 100%;
+    padding: 10px 0;
+  }
+
+  & > header {
+    border-bottom: 1px dotted var(--white);
+
+    & nav ul {
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+
+      display: flex;
+      gap: 10px;
+
+      & li:first-of-type a {
+        color: var(--white);
+        font-weight: bold;
+      }
+
+      & li:last-of-type {
+        margin-left: auto;
+        margin-right: 5px;
+        line-height: 1;
+      }
+    }
+  }
+
+  & > main {
+    flex: auto;
+
+    & > :first-child {
+      margin-top: 0;
+    }
+  }
+
+  & > footer {
+    /*
+    & ::before {
+      content: "👻";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
+    */
+
+    flex: 0 69px;
+    background: url(gobbo.png) bottom right / 69px no-repeat;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+
+    text-shadow:
+      0 0 1px var(--black),
+      0 0 2px var(--black);
+  }
+}
+
+a {
+  color: var(--orange);
+  text-decoration: none;
+
+  &.active {
+    text-decoration: underline;
+  }
+}
+
+blockquote {
+  margin: 1em 0;
+  padding: 1em;
+  background: var(--background);
+  border-left: 0.2em solid var(--white);
+
+  & > :first-child {
+    margin-top: 0;
+  }
+
+  & > :last-child {
+    margin-bottom: 0;
+  }
+}
+
+cite {
+  font-style: normal;
+}
+
+code:not(pre code) {
+  padding: 0.2em 0.4em;
+  white-space: break-spaces;
+  background: var(--background);
+  font-size: 85%;
+}
+
+pre {
+  padding: 1em;
+  background: var(--background);
+  font-size: 85%;
+  overflow-y: auto;
+}
+
+details summary {
+  cursor: pointer;
+}
+
+hr {
+  margin: 10px 0;
+  border: 0;
+  border-bottom: 1px dotted var(--white);
+}
+
+img, video {
+  max-width: 100%;
+}
+
+time {
+  color: var(--gray);
+  font-family: monospace, monospace;
+}
