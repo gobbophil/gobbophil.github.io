@@ -157,3 +157,8 @@ time {
   color: var(--gray);
   font-family: monospace, monospace;
 }
+
+.avatar {
+  float: right;
+  max-width: 69px;
+}
